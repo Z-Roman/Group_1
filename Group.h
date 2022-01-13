@@ -1,17 +1,20 @@
 #pragma once
 #include <iostream>
+#include "Student.h"
+#include "Date.h"
 using namespace std;
 
 class Group
 {
-
-	unsigned int SizeOfGroup = 0; // 0 студентов по умолчанию
+	Student* The_student = nullptr; // указатель на массив студентов
+	unsigned int SizeOfGroup; // кол-во студентов
 	char* NameOfGroup = nullptr; // название группы
 	char* SpecOfGroup = nullptr; // специализация группы
-	unsigned int CourseNumber = 1; // номер курса
+	unsigned int CourseNumber; // номер курса
 
 public:
 
+	Group();
 	Group(unsigned int SizeOfGroup);
 };
 

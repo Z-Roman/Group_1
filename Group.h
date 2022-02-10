@@ -6,7 +6,7 @@ using namespace std;
 
 class Group
 {
-	Student* The_student = nullptr; // указатель на массив студентов
+	Student** The_student = nullptr; // указатель на массив указателей на студентов
 	unsigned int SizeOfGroup; // кол-во студентов
 	char* NameOfGroup = nullptr; // название группы
 	char* SpecOfGroup = nullptr; // специализация группы
@@ -16,5 +16,6 @@ public:
 
 	Group();
 	Group(unsigned int SizeOfGroup);
+	~Group();
 };
 

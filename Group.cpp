@@ -13,7 +13,7 @@ Group::Group(unsigned int SizeOfGroup)/* : Group("No Group Name", "No Spec. Of G
 	
 }
 
-Group::Group(char* NameOfGroup, char* SpecOfGroup)
+Group::Group(string NameOfGroup, string SpecOfGroup)
 {
 	this->NameOfGroup = NameOfGroup;
 	this->SpecOfGroup = SpecOfGroup;
@@ -23,8 +23,22 @@ Group::Group(char* NameOfGroup, char* SpecOfGroup)
 
 Group::~Group()
 {
-	if (NameOfGroup != nullptr) delete[] NameOfGroup;
-	if (SpecOfGroup != nullptr) delete[] SpecOfGroup;
+
+}
+
+void Group::SetNameOfGroup(char* NameOfGroup)
+{
+	this->NameOfGroup = NameOfGroup;
+}
+
+void Group::SetSpecOfGroup(string SpecOfGroup)
+{
+	this->SpecOfGroup = SpecOfGroup;
+}
+
+string Group::GetNameOfGroup()
+{
+	return string();
 }
 
 void Group::AddStudent(string surname, string name, string patronymic)
@@ -35,7 +49,7 @@ void Group::AddStudent(string surname, string name, string patronymic)
 		temp[i] = Students[i];
 	}
 
-	Student* NewStudent = new Student(name, surname, patronymic);
+	Student* NewStudent = new Student(surname, name, patronymic);
 	temp[SizeOfGroup] = NewStudent;
 	delete[]Students;
 	Students = temp;

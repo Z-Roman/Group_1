@@ -12,9 +12,11 @@ public:
 
 	Group();
 	Group(unsigned int SizeOfGroup);
+	Group(char* NameOfGroup, char* SpecOfGroup);
 	~Group();
 
 	void AddStudent(string surname, string name, string patronimic);
+	void PrintGroup();
 
 	string GenPatronymic();
 	string GenName();

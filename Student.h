@@ -23,9 +23,9 @@ public:
 
 	Student() : Student("No name", "No surname", "No patronymic", "No adress", "No tel", 1, 1, 2000) {}
 
-	Student(string name, string surname, string patronymic) : Student(name, surname, patronymic, "No adress", "No tel", 1, 1, 2000) {}
+	Student(string surname, string name, string patronymic) : Student(surname, name, patronymic, "No adress", "No tel", 1, 1, 2000) {}
 
-	Student(string name, string surname, string patronymic, string adress, string tel, int day, int month, int year)
+	Student(string surname, string name, string patronymic, string adress, string tel, int day, int month, int year)
 	{
 		SetName(name);
 		SetSurname(surname);

@@ -9,6 +9,7 @@ Group::Group()
 Group::Group(unsigned int SizeOfGroup)
 {
 	this->SizeOfGroup = SizeOfGroup;
+	//Students[SizeOfGroup];
 	
 }
 
@@ -16,6 +17,17 @@ Group::~Group()
 {
 	if (NameOfGroup != nullptr) delete[] NameOfGroup;
 	if (SpecOfGroup != nullptr) delete[] SpecOfGroup;
+}
+
+void Group::AddStudent(string surname, string name, string patronymic)
+{
+	Student** temp = new Student * [SizeOfGroup + 1];
+	for (int i = 0; i < SizeOfGroup; i++)
+	{
+		temp[i] = Students[i];
+	}
+
+	Student* NewStudent = new Student(name, surname, patronymic);
 }
 
 string Group::GenPatronymic()

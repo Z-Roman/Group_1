@@ -2,7 +2,7 @@
 
 class Group
 {
-	Student** The_student = nullptr; // указатель на массив указателей на студентов
+	Student** Students = nullptr; // указатель на массив указателей на студентов
 	unsigned int SizeOfGroup; // кол-во студентов
 	char* NameOfGroup = nullptr; // название группы
 	char* SpecOfGroup = nullptr; // специализация группы
@@ -13,6 +13,8 @@ public:
 	Group();
 	Group(unsigned int SizeOfGroup);
 	~Group();
+
+	void AddStudent(string surname, string name, string patronimic);
 
 	string GenPatronymic();
 	string GenName();

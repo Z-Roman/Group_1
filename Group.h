@@ -1,8 +1,4 @@
-#pragma once
-#include <iostream>
-#include "Student.h"
-#include "Date.h"
-using namespace std;
+#include "Libra.h"
 
 class Group
 {
@@ -17,5 +13,9 @@ public:
 	Group();
 	Group(unsigned int SizeOfGroup);
 	~Group();
+
+	string GenPatronymic();
+	string GenName();
+	string GenSurname();
 };
 

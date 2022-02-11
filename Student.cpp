@@ -1,7 +1,4 @@
-#include <iostream>
-#include "Student.h"
-#include "Date.h"
-using namespace std;
+#include "Libra.h"
 
 void Student::operator=(const Student& other)
 {

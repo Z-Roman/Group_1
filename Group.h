@@ -17,14 +17,14 @@ public:
 
 	void SetNameOfGroup(string NameOfGroup);
 	void SetSpecOfGroup(string SpecOfGroup);
-	string GetNameOfGroup();
-	string GetSpecOfGroup();
-	unsigned int GetSizeOfGroup();
-	unsigned int GetCourseNumber();
+
+	const string const GetNameOfGroup() const;
+	const string const GetSpecOfGroup() const;
+	const unsigned int const GetSizeOfGroup() const;
+	const unsigned int const GetCourseNumber() const;
 	
-
-
 	void AddStudent(string surname, string name, string patronimic);
+	void const Sort() const;
 	void PrintGroup();
 
 	string GenPatronymic();

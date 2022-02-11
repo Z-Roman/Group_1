@@ -137,7 +137,7 @@ void Student::SetMark_Cours(int mark)
 //	return os;
 //}
 
-void Student::ShowStudent()
+void const Student::ShowStudent() const
 {
 	cout << "Имя\t\t\t" << name << "\n";
 	cout << "Фамилия\t\t\t" << surname << "\n";

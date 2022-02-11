@@ -7,8 +7,9 @@ int main()
 	srand(time(0));
 
 	Group g ("SPU121", "Development");
-	SPU->AddStudent("Oleg", "Olegovich", "Olegov");
-	SPU->PrintGroup();
+	g.AddStudent("Olegov", "Oleg", "Olegovich");
+	g.AddStudent("Johnov", "John", "Jonovich");
+	g.PrintGroup();
 
 	return 0;
 }

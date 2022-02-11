@@ -60,7 +60,20 @@ public:
 	void SetMark_Exam(int mark);
 	void SetMark_Cours(int mark);
 
-	void ShowStudent();
+	string const GetSurname() const
+	{
+		return this->surname;
+	}
+	string const GetName() const
+	{
+		return this->name;
+	}
+	string const GetPatronymic() const
+	{
+		return this->patronymic;
+	}
+
+	void const ShowStudent() const;
 	void operator = (const Student& other);
 	Student(const Student& other);
 	~Student();

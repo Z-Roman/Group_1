@@ -1,14 +1,14 @@
 #include "Libra.h"
 
-Group::Group()/* : Group("No Group Name", "No Spec. Of Group")*/
+Group::Group() : Group("No Group Name", "No Spec. Of Group")
 {
-	CourseNumber = 1; // default course 1
-	SizeOfGroup = 0; //students by default 0
+	//CourseNumber = 1; // default course 1
+	//SizeOfGroup = 0; //students by default 0
 }
 
-Group::Group(unsigned int SizeOfGroup)/* : Group("No Group Name", "No Spec. Of Group")*/
+Group::Group(unsigned int SizeOfGroup) : Group("No Group Name", "No Spec. Of Group")
 {
-	this->SizeOfGroup = SizeOfGroup;
+	/*this->SizeOfGroup = SizeOfGroup;*/
 	//Students[SizeOfGroup];
 	
 }
@@ -25,8 +25,8 @@ Group::~Group()
 {
 
 }
-
-void Group::SetNameOfGroup(char* NameOfGroup)
+////////////////////////////////////////////////// Setters //////////////////////////////////////
+void Group::SetNameOfGroup(string NameOfGroup)
 {
 	this->NameOfGroup = NameOfGroup;
 }
@@ -35,11 +35,27 @@ void Group::SetSpecOfGroup(string SpecOfGroup)
 {
 	this->SpecOfGroup = SpecOfGroup;
 }
-
-string Group::GetNameOfGroup()
+//////////////////////////////////////////////////// Getters /////////////////////////////////////
+string const Group::GetNameOfGroup() const
 {
-	return string();
+	return this->NameOfGroup;
 }
+
+string const Group::GetSpecOfGroup() const
+{
+	return this->SpecOfGroup;
+}
+
+unsigned int const Group::GetSizeOfGroup() const
+{
+	return this->SizeOfGroup;
+}
+
+unsigned int const Group::GetCourseNumber() const
+{
+	return this->CourseNumber;
+}
+//////////////////////////////////////////////// methods ///////////////////////////////////////
 
 void Group::AddStudent(string surname, string name, string patronymic)
 {
@@ -56,12 +72,29 @@ void Group::AddStudent(string surname, string name, string patronymic)
 	SizeOfGroup++;
 }
 
+void const Group::Sort() const
+{
+	for (int i = 0; i < SizeOfGroup; i++)
+	{
+		for (int j = SizeOfGroup - 1; j > i; j--)
+		{
+			if (Students[i] > Students[j])
+			{
+				swap(Students[i], Students[j]);
+			}
+		}
+	}
+}
+
+
+
 void Group::PrintGroup()
 {
-	cout << "Group: " << NameOfGroup << "\n";
-	cout << "Specialization: " << SpecOfGroup << "\n";
-	cout << "Course: " << CourseNumber << "\n";
-	cout << "Number of students: " << SizeOfGroup << "\n";
+	cout << "Group:\t\t\t" << GetNameOfGroup() << "\n";
+	cout << "Specialization:\t\t" << GetSpecOfGroup() << "\n";
+	cout << "Course:\t\t\t" << GetCourseNumber() << "\n";
+	cout << "Number of students:\t" << GetSizeOfGroup() << "\n";
+	
 }
 
 string Group::GenPatronymic()

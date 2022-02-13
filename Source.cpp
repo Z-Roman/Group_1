@@ -9,6 +9,7 @@ int main()
 	Group g ("SPU121", "Development");
 	g.AddStudent("Olegov", "Oleg", "Olegovich");
 	g.AddStudent("Johnov", "John", "Jonovich");
+	g.Sort();
 	g.PrintGroup();
 
 	return 0;

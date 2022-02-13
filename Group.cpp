@@ -74,12 +74,15 @@ void Group::AddStudent(string surname, string name, string patronymic)
 
 void const Group::Sort() const
 {
+	cout << "\nSort\n";
 	for (int i = 0; i < SizeOfGroup; i++)
 	{
 		for (int j = SizeOfGroup - 1; j > i; j--)
 		{
-			if (Students[i] > Students[j])
+			if (Students[i] < Students[j]) //перегрузить оператор сравнения
 			{
+				cout << "\nStudents[i] - " << Students[i]
+					<< "\nStudents[j] - " << Students[j] << "\n";
 				swap(Students[i], Students[j]);
 			}
 		}
@@ -94,6 +97,11 @@ void Group::PrintGroup()
 	cout << "Specialization:\t\t" << GetSpecOfGroup() << "\n";
 	cout << "Course:\t\t\t" << GetCourseNumber() << "\n";
 	cout << "Number of students:\t" << GetSizeOfGroup() << "\n";
+	for (int i = 0; i < SizeOfGroup; i++)
+	{
+		cout << i + 1 << ". " << Students[i]->GetSurname() << " " << Students[i]->GetName()
+			<< " " << Students[i]->GetPatronymic() << "\n";
+	}
 	
 }
 

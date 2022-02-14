@@ -113,6 +113,30 @@ void Group::GenStudent()
 	AddStudent(GenSurname(), GenName(), GenPatronymic());
 }
 
+void Group::GenDate()
+{
+	srand(time(0));
+	int y = rand() % 20 + 1980;
+	int m = rand() % 12 + 1;
+	int d = 1;
+	if (m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12)
+	{
+		d = rand() % 31 + 1;
+	}
+	else if (m == 4 || m == 6 || m == 9 || m == 11)
+	{
+		d = rand() % 30 + 1;
+	}
+	else if (m == 2 && y % 4 == 0)
+	{
+		d = rand() % 29 + 1;
+	}
+	else d = rand() % 28 + 1;
+
+	Student::SetDate(d, m, y);
+}
+
+
 string Group::GenPatronymic()
 {
 	switch (rand() % 10)
@@ -162,4 +186,6 @@ string Group::GenSurname()
 	case 8: return "Mihodjan";
 	case 9: return "Sergeev";
 	}
+
+
 }

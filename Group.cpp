@@ -2,15 +2,14 @@
 
 Group::Group() : Group("No Group Name", "No Spec. Of Group")
 {
-	//CourseNumber = 1; // default course 1
-	//SizeOfGroup = 0; //students by default 0
 }
 
 Group::Group(unsigned int SizeOfGroup) : Group("No Group Name", "No Spec. Of Group")
-{
-	/*this->SizeOfGroup = SizeOfGroup;*/
-	//Students[SizeOfGroup];
-	
+{	
+	for (int i = 0; i < SizeOfGroup; i++)
+	{
+		GenStudent();
+	}
 }
 
 Group::Group(string NameOfGroup, string SpecOfGroup)
@@ -79,10 +78,8 @@ void const Group::Sort() const
 	{
 		for (int j = SizeOfGroup - 1; j > i; j--)
 		{
-			if (Students[i] < Students[j]) //перегрузить оператор сравнения
+			if (Students[i]->GetSurname() > Students[j]->GetSurname())
 			{
-				cout << "\nStudents[i] - " << Students[i]
-					<< "\nStudents[j] - " << Students[j] << "\n";
 				swap(Students[i], Students[j]);
 			}
 		}
@@ -103,6 +100,18 @@ void Group::PrintGroup()
 			<< " " << Students[i]->GetPatronymic() << "\n";
 	}
 	
+}
+
+void Group::GenStudent()
+{
+	AddStudent(GenSurname(), GenName(), GenPatronymic());
+	//Student** temp = new Student * [SizeOfGroup + 1];
+	//for (int i = 0; i < SizeOfGroup; i++)
+	//{
+	//	temp[i] = Students[i];
+	//}
+	//temp[SizeOfGroup] = Student(surname, name, patronymic);
+
 }
 
 string Group::GenPatronymic()

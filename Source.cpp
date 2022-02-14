@@ -11,6 +11,14 @@ int main()
 	g.AddStudent("Johnov", "John", "Jonovich");
 	g.Sort();
 	g.PrintGroup();
+	
+	cout << "\n\n------------------------------------\n\n";
+
+	Group J(10);
+	
+	J.PrintGroup();
+	J.Sort();
+	J.PrintGroup();
 
 	return 0;
 }

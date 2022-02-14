@@ -26,6 +26,7 @@ public:
 	void AddStudent(string surname, string name, string patronimic);
 	void const Sort() const;
 	void PrintGroup();
+	void GenStudent();
 
 	string GenPatronymic();
 	string GenName();

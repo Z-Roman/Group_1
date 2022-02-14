@@ -79,10 +79,10 @@ void const Group::Sort() const
 	{
 		for (int j = SizeOfGroup - 1; j > i; j--)
 		{
-			if (Students[i] < Students[j]) //перегрузить оператор сравнения
+			if (Students[i]->GetSurname() > Students[j]->GetSurname())
 			{
-				cout << "\nStudents[i] - " << Students[i]
-					<< "\nStudents[j] - " << Students[j] << "\n";
+				cout << "\nStudents[i] - " << Students[i]->GetSurname()
+					<< "\nStudents[j] - " << Students[j]->GetSurname() << "\n";
 				swap(Students[i], Students[j]);
 			}
 		}
@@ -102,7 +102,6 @@ void Group::PrintGroup()
 		cout << i + 1 << ". " << Students[i]->GetSurname() << " " << Students[i]->GetName()
 			<< " " << Students[i]->GetPatronymic() << "\n";
 	}
-	
 }
 
 string Group::GenPatronymic()

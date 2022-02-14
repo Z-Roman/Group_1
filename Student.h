@@ -8,7 +8,6 @@ class Student
 	string patronymic;
 	string adress = "No adress";
 	string tel = "No tel";
-	int current_year = 2022;
 	int day = 1;
 	int month = 1;
 	int year = 2000;
@@ -56,11 +55,8 @@ public:
 	{
 		this->tel = tel;
 	}
-	void SetCurrentYear(int current_year)
-	{
-		this->current_year = current_year;
-	}
 	void SetDate(int day, int month, int year);
+	void GenDate();
 	void SetMark_Cred(int mark);
 	void SetMark_Exam(int mark);
 	void SetMark_Cours(int mark);

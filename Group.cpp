@@ -56,6 +56,11 @@ unsigned int const Group::GetCourseNumber() const
 }
 //////////////////////////////////////////////// methods ///////////////////////////////////////
 
+void Group::SetCurrentYear(int current_year)
+{
+	this->current_year = current_year;
+}
+
 void Group::AddStudent(string surname, string name, string patronymic)
 {
 	Student** temp = new Student * [SizeOfGroup + 1];
@@ -97,7 +102,8 @@ void Group::PrintGroup()
 	for (int i = 0; i < SizeOfGroup; i++)
 	{
 		cout << i + 1 << ". " << Students[i]->GetSurname() << " " << Students[i]->GetName()
-			<< " " << Students[i]->GetPatronymic() << "\n";
+			<< " " << Students[i]->GetPatronymic()
+			<< "age"  "\n";
 	}
 	
 }
@@ -105,13 +111,6 @@ void Group::PrintGroup()
 void Group::GenStudent()
 {
 	AddStudent(GenSurname(), GenName(), GenPatronymic());
-	//Student** temp = new Student * [SizeOfGroup + 1];
-	//for (int i = 0; i < SizeOfGroup; i++)
-	//{
-	//	temp[i] = Students[i];
-	//}
-	//temp[SizeOfGroup] = Student(surname, name, patronymic);
-
 }
 
 string Group::GenPatronymic()

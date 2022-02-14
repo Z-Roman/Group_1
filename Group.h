@@ -7,6 +7,7 @@ class Group
 	unsigned int CourseNumber; // номер курса
 	string NameOfGroup; // название группы
 	string SpecOfGroup; // специализация группы
+	int current_year = 2022;
 
 public:
 
@@ -23,6 +24,7 @@ public:
 	const unsigned int const GetSizeOfGroup() const;
 	const unsigned int const GetCourseNumber() const;
 	
+	void SetCurrentYear(int current_year);
 	void AddStudent(string surname, string name, string patronimic);
 	void const Sort() const;
 	void PrintGroup();

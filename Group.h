@@ -29,7 +29,7 @@ public:
 	void const Sort() const;
 	void PrintGroup();
 	void GenStudent();
-	void GenDate();
+
 
 	string GenPatronymic();
 	string GenName();

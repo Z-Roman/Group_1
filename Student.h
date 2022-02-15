@@ -56,7 +56,7 @@ public:
 		this->tel = tel;
 	}
 	void SetDate(int day, int month, int year);
-	//void GenDate();
+	void GenDate();
 	void SetMark_Cred(int mark);
 	void SetMark_Exam(int mark);
 	void SetMark_Cours(int mark);
